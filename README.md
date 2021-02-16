@@ -1,51 +1,38 @@
-# Full-stack Web Developer (Week 6)
+# Homework 1 (15 pts)
 
-## React ([Docs](https://reactjs.org/docs/getting-started.html))
+## Create website from SpaceX public API
+- Document: https://docs.spacexdata.com/
+- API URL: https://api.spacexdata.com/v3
 
-### Data fetching ([Ref.](https://developers.google.com/web/updates/2015/03/introduction-to-fetch))
-- fetch ([Ref.](https://javascript.info/fetch-api))
-```javascript
-const response = await fetch(url, options)
-const data = await response.json()
-console.log(data)
-```
-- axios ([Ref.](https://github.com/axios/axios))
-- apollo-client ([Ref.](https://github.com/apollographql/apollo-client))
-- etc.
+## Sitemap
+- Home
+- Rockets
+  - Rocket detail
+- Launches
+  - Launch detail
 
-### React router
-- react-router-dom ([Docs](https://reactrouter.com/web/guides/quick-start))
+## Requirements (10 pts)
+- Create project from create-react-app
+- Every page: Menu links to Home page, Rockets page and Launches page
+- Every page: Active menu
+- Home page: Display any data about SpaceX
+- Rockets page: Display rockets in List, Table, Card or any
+- Rocker detail page: Display rocket detail
+- Launches page: Display launches in List, Table, Card or any
+- Launches page: Filter by `launch_year`, `rocket_name` and `launch_success`
+- Launch detail page: Display launch detail, link to rocket detail
 
-#### Example
-- [Basic](https://reactrouter.com/web/example/basic)
-- [URL Parameters](https://reactrouter.com/web/example/url-params)
-- [Nesting](https://reactrouter.com/web/example/nesting)
-- [No Match (404)](https://reactrouter.com/web/example/no-match)
-- [Hooks](https://reactrouter.com/web/api/Hooks)
+## Advance requirements (5 pts)
+- Responsive design (desktop and mobile)
+- PWA: Save to APP and offline page
+- Launches page: Display launches with pagination or infinite scroll
 
-### ESLint ([Docs](https://eslint.org/docs/user-guide/getting-started))
-| Find and fix problems in your JavaScript code
+## Special scores (5 pts)
+- Design: Top 3 design, votes from everyone
+- Bundle size: Top 3 smallest bundle size
+- Performance: Top 3 lighthouse score
 
-### Production build and Deployment ([Docs](https://create-react-app.dev/docs/deployment/))
-- Build command `yarn build` or `num run build`
-- Copy build folder to server
-- Nginx config for react-router, path `/etc/nginx/conf.d`
-```
-server {
-  listen       80;
-  server_name  localhost;
-
-  root   /usr/share/nginx/html;
-  index  index.html index.htm;
-
-  location / {
-    try_files $uri $uri/ /index.html;
-  }
-
-  location ~* \.(?:jpg|jpeg|gif|png|ico|cur|gz|svg|svgz|mp4|ogg|ogv|webm|htc)$ {
-    expires 1M;
-    access_log off;
-    add_header Cache-Control "public";
-  }
-}
-```
+## Tasks
+- POC: 15 Feb 2021 23:59
+- Beta test: 22 Feb 2021 09:00 - 12:00
+- Release: 24 Feb 2021 23:59
