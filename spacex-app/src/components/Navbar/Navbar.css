@@ -50,9 +50,6 @@
   color: white;
   margin-left: 2rem;
 }
-.nav-links-mobile {
-  display: none;
-}
 .menu-icon {
   display: none;
 }
@@ -68,7 +65,7 @@
     height: 500px;
     position: absolute;
     top: 80px;
-    left: -80%;
+    left: -100%;
     opacity: 1;
     transition: all 0.4s ease;
 }
