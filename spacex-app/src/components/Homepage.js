@@ -1,9 +1,8 @@
 import React from "react";
-import Navbar from "./Navbar/Navbar";
 import "./Homepage.css";
 const Homepage = () => {
   return (
-    <div className="Home"><Navbar/></div>
+      <h1>This is HomePage</h1>
   );
 };
 export default Homepage;
