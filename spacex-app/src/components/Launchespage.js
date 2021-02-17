@@ -2,7 +2,7 @@ import React from 'react'
 
 const LaunchesPage = () => {
     return(
-        <h1>This is LaunchesPage</h1>
+       <div className="Home"><Navbar/></div>
     )
 }
 export default LaunchesPage;

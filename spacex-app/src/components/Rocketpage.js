@@ -2,7 +2,7 @@ import React from 'react'
 
 const RocketPage = () => {
     return(
-        <h1>This is RocketPage</h1>
+        <div className="Home"><Navbar/></div>
     )
 }
 export default RocketPage;
