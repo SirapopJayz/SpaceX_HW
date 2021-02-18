@@ -1,8 +1,7 @@
 import React from 'react'
-
 const LaunchesPage = () => {
     return(
-       <div className="Home"><Navbar/></div>
+        <h1>This is LaunchesPage</h1>
     )
 }
 export default LaunchesPage;
