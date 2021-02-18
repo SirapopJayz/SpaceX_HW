@@ -2,14 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import Homepage from "./components/Homepage";
-<<<<<<< HEAD
-ReactDOM.render(
-    <Homepage/>, document.getElementById("root")
-=======
 import Launchespage from "./components/Launchespage";
 import Rocketpage from "./components/Rocketpage";
 import Navbar from "./components/Navbar/Navbar";
-import "./index.css";
 import { BrowserRouter, Redirect, Route } from "react-router-dom";
 ReactDOM.render(
   <div className="body">
@@ -22,5 +17,4 @@ ReactDOM.render(
     </BrowserRouter>
   </div>,
   document.getElementById("root")
->>>>>>> main
 );
