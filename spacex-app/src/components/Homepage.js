@@ -1,9 +1,7 @@
 import React from "react";
 import "../index.css"
 import "./Homepage.css";
-<<<<<<< HEAD
 import Video1 from "../components/videos/video-1.mp4"
-=======
 import { useQuery } from "react-query";
 >>>>>>> adddetail_onpage
 const Homepage = () => {
