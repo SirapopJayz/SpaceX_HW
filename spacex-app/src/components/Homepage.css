@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 video {
     object-fit: cover;
     width: 100%;
@@ -32,4 +33,9 @@ video {
     .home-container > p {
         font-size: 30px;
     }
+=======
+.content {
+    margin-top: 2rem;
+    font-size: 18px;
+>>>>>>> adddetail_onpage
 }
