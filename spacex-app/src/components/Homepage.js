@@ -13,6 +13,7 @@ const Homepage = () => {
    if (isLoading) return 'Loading...'
    if (error) return 'An error has occurred: ' + error.message
    console.log(data);
+
   return (
       <div className='home-container'>
         <video loop autoPlay muted preload="auto" autobuffer="true" data-mobile-video>
