@@ -12,7 +12,7 @@ const Homepage = () => {
    )
    if (isLoading) return 'Loading...'
    if (error) return 'An error has occurred: ' + error.message
-   console.log(data);
+  //  console.log(data);
 
   return (
       <div className='home-container'>
