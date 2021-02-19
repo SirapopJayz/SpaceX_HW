@@ -12,29 +12,73 @@ video {
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0,0.2);
     object-fit: contain;
 }
 
-.home-container > h1 {
-    color: #fff; 
-    font-size: 100px;
-    margin-top: 100px;
+.home-row {
+    align-items: center;
+    justify-content: center;
+}
+
+.col {
+    margin-bottom: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+    flex: 1;
+    /* max-width: 100%;
+    flex-basis: 100%; */
+}
+
+.row {
+    display: flex;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    flex-wrap: wrap;
+    align-content: stretch;
+  }
+
+.home-text {
+    max-width: 540px;
+    padding-top: 0px;
+    padding-bottom: 60px;
+}
+
+.topic > h1 {
+    color: #fff;
+    font-size: 60px;
+    line-height: 100px;
+    letter-spacing: 20px;
+    margin-bottom: 16px;
+}
+.subtitle {
+    max-width: 650px;
+    margin-bottom: 35px;
+    color:#fff;
+    font-size: 18px;
+    line-height: 24px;
 }
 
 @media screen and (max-width: 960px) {
-    .home-container > h1 {
-        font-size: 50px;
-        margin-top: -100px;
+    .container {
+        padding-right: 30px;
+        padding-left: 30px;
+      }
+}
+
+@media screen and (max-width: 768px) {
+    .home-text {
+        padding-bottom: 65px;
     }
 
-    .home-container > p {
-        font-size: 30px;
+    .topic {
+        color: #fff;
+        font-size: 40px;
+        line-height: 100px;
+        letter-spacing: 20px;
+        margin-bottom: 16px;
     }
-=======
-.content {
-    margin-top: 2rem;
-    font-size: 18px;
->>>>>>> adddetail_onpage
 }
