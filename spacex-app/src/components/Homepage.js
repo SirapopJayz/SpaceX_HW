@@ -22,8 +22,8 @@ const Homepage = () => {
           <div className='col'>
             <div className='home-text'>
               <div className='topic'>
-                <h1>SpaceX</h1>
-                </div>
+                {data.name}
+              </div>
               <div className='subtitle'>
                 {data.summary}
               </div>
