@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "react-query";
 import "./Rocketpage.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Card, ListGroup, ListGroupItem} from 'react-bootstrap';
+import { Card} from 'react-bootstrap';
 // import Rocketitem from './Item/Rocketitem'
 const RocketPage = () => {
   const { isLoading, error, data } = useQuery("spaceX", () =>
@@ -13,10 +13,12 @@ const RocketPage = () => {
   if (error) return "An error has occurred: " + error.message;
   for (let i = 0; i < data.length; i++) {
     datalist.push({
+      rocket_id: data[i].rocket_id,
       rocket_name: data[i].rocket_name,
       description: data[i].description,
       active: data[i].active,
       images_url: data[i].flickr_images,
+      wikipedia: data[i].wikipedia,
     });
   }
   console.log(data);
@@ -33,14 +35,14 @@ const RocketPage = () => {
                   {item.description}
                 </Card.Text>
               </Card.Body>
-              <ListGroup className="list-group-flush">
+              {/* <ListGroup className="list-group-flush">
                 <ListGroupItem>Cras justo odio</ListGroupItem>
                 <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
                 <ListGroupItem>Vestibulum at eros</ListGroupItem>
-              </ListGroup>
+              </ListGroup> */}
               <Card.Body>
-                <Card.Link href="#">Card Link</Card.Link>
-                <Card.Link href="#">Another Link</Card.Link>
+                <Card.Link href={`/Rocket/${item.rocket_id}`}>Read more Detail</Card.Link>
+                <Card.Link href={item.wikipedia}>Wiki Pedia</Card.Link>
               </Card.Body>
             </Card>
           );
