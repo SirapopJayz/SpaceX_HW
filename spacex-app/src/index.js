@@ -5,19 +5,20 @@ import Homepage from "./components/pages/Home";
 import Launchespage from "./components/Launchespage";
 import Rocketpage from "./components/Rocketpage";
 import Navbar from "./components/Navbar/Navbar";
+import Rocket from "./components/Detailpage/Rocket";
 import "./index.css";
 import { QueryClient, QueryClientProvider} from "react-query";
-import { BrowserRouter, Redirect, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 const queryClient = new QueryClient();
 ReactDOM.render(
   <QueryClientProvider client={queryClient}>
     <div className="body">
       <BrowserRouter>
         <Navbar />
-        <Route exact path="/Home" component={Homepage} />
+        <Route path="/Home" component={Homepage} />
         <Route path="/Launches" component={Launchespage} />
-        <Route path="/Rocket" component={Rocketpage} />
-        <Redirect to="/Home" />
+        <Route exact path="/Rocket" component={Rocketpage} />
+        <Route path="/Rocket/:rocket_id" component={Rocket} />
       </BrowserRouter>
     </div>
   </QueryClientProvider>,
