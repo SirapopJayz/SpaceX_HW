@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import Homepage from "./components/pages/Home";
+import Homepage from "./components/Homepage";
 import Launchespage from "./components/Launchespage";
 import Rocketpage from "./components/Rocketpage";
 import Navbar from "./components/Navbar/Navbar";
