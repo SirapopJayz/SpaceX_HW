@@ -19,7 +19,7 @@ const RocketPage = () => {
       images_url: data[i].flickr_images,
     });
   }
-  console.log(data);
+  // console.log(data);
   return (
     <div className="content">
       <ul>
