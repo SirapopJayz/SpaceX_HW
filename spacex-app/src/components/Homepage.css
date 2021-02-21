@@ -51,8 +51,9 @@ video {
     color: #fff;
     font-size: 60px;
     line-height: 100px;
-    letter-spacing: 20px;
+    letter-spacing: 5px;
     margin-bottom: 16px;
+    text-align: center
 }
 .subtitle {
     max-width: 650px;
@@ -60,6 +61,24 @@ video {
     color:#fff;
     font-size: 18px;
     line-height: 24px;
+}
+
+.topic-founder {
+    color: #fff;
+    font-size: 60px;
+    line-height: 100px;
+    letter-spacing: 5px;
+    margin-bottom: 1px;
+    text-align: center
+}
+
+.subtitle-founder {
+    max-width: 650px;
+    margin-bottom: 35px;
+    color:#fff;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center
 }
 
 @media screen and (max-width: 960px) {
@@ -78,7 +97,7 @@ video {
         color: #fff;
         font-size: 48px;
         line-height: 100px;
-        letter-spacing: 20px;
+        letter-spacing: 5px;
         margin-bottom: 16px;
     }
 }

@@ -29,10 +29,18 @@ const Homepage = () => {
                 {data.summary}
               </div>
             </div>
+            <div className='founder-info'>
+              <div className='topic-founder'>
+                Founder
+              </div>
+              <div className='subtitle-founder'>
+                {data.founder}<br></br><br></br>
+                <a href={data.links.elon_twitter}><i className="fab fa-twitter"></i></a>
+                <a href={data.links.website}><i className="fas fa-rocket"></i></a>
+              </div>
+            </div>
           </div>
         </div>
-        {/* <h1>SpaceX</h1>
-        <h4>{data.summary}</h4> */}
         {/* <div className="content">
           <h3>Founder : {data.founder}</h3>
           <h3>Elon's Twitter : <a href={data.links.elon_twitter}><i className="fab fa-twitter"></i></a></h3>
