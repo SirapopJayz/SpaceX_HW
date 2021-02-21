@@ -6,6 +6,7 @@ import Launchespage from "./components/Launchespage";
 import Rocketpage from "./components/Rocketpage";
 import Navbar from "./components/Navbar/Navbar";
 import Rocket from "./components/Detailpage/Rocket";
+import Launches from "./components/Detailpage/Launches";
 import "./index.css";
 import { QueryClient, QueryClientProvider} from "react-query";
 import { BrowserRouter, Route } from "react-router-dom";
@@ -16,9 +17,10 @@ ReactDOM.render(
       <BrowserRouter>
         <Navbar />
         <Route path="/Home" component={Homepage} />
-        <Route path="/Launches" component={Launchespage} />
+        <Route exact path="/Launches" component={Launchespage} />
         <Route exact path="/Rocket" component={Rocketpage} />
         <Route path="/Rocket/:rocket_id" component={Rocket} />
+        <Route path="/Launches/:flight_number" component={Launches} />
       </BrowserRouter>
     </div>
   </QueryClientProvider>,
