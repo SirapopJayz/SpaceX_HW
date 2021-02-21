@@ -33,26 +33,26 @@ const Rocket = (props) => {
             <h5><strong>Cost :</strong> {data.cost_per_launch}</h5>
             Diameter:
             <ul>
-              <li style={{marginLeft:20}}>Feet: {data.diameter.feet}</li>
-              <li style={{marginLeft:20}}>meters: {data.diameter.meters}</li>
+              <li>Feet: {data.diameter.feet}</li>
+              <li>meters: {data.diameter.meters}</li>
             </ul>
             Mass:
             <ul>
-              <li style={{marginLeft:20}}>Kg: {data.mass.kg}</li>
-              <li style={{marginLeft:20}}>Lb: {data.mass.lb}</li>
+              <li>Kg: {data.mass.kg}</li>
+              <li>Lb: {data.mass.lb}</li>
             </ul>
             Height:
             <ul>
-              <li style={{marginLeft:20}}>Meters: {data.height.meters}</li>
-              <li style={{marginLeft:20}}>Feet: {data.height.feet}</li>
+              <li>Meters: {data.height.meters}</li>
+              <li>Feet: {data.height.feet}</li>
             </ul>
             Payload weights:
             {data.payload_weights.map((item) => {
               return (
                 <ul>
-                  <li style={{marginLeft:20}}>Name: {item.name}</li>
-                  <li style={{marginLeft:20}}>Kg: {item.kg}</li>
-                  <li style={{marginLeft:20}}>Lb: {item.lb}</li>
+                  <li>Name: {item.name}</li>
+                  <li>Kg: {item.kg}</li>
+                  <li>Lb: {item.lb}</li>
                 </ul>
               );
             })}

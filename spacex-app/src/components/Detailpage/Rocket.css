@@ -17,7 +17,7 @@ video {
 }
 
 .bg {
-    background: white;
+    background: black;
 }
 
 .img-conainer {
@@ -46,8 +46,9 @@ img {
 
 .context {
     font-size: 18px;
+    color: white;
 }
 
-.li {
+li {
     margin-left: 30px;
 }
