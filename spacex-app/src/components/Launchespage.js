@@ -2,7 +2,8 @@ import React from "react";
 import { useQuery } from "react-query";
 import Table from "react-bootstrap/Table";
 import Button from 'react-bootstrap/Button'
-const LaunchesPage = () => {
+import { useHistory } from "react-router-dom";
+const LaunchesPage = (props) => {
   const { isLoading, error, data } = useQuery("spaceX", () =>
     fetch("https://api.spacexdata.com/v3/launches").then((res) => res.json())
   );
@@ -19,6 +20,7 @@ const LaunchesPage = () => {
     });
   }
   console.log(data);
+  const history = useHistory();
   return (
     <Table striped bordered hover variant="dark" responsive="md">
       <thead>
@@ -33,7 +35,7 @@ const LaunchesPage = () => {
       <tbody>
         {datalist.map((item, i) => {
           return (
-            <tr key={i}>
+            <tr key={i} onClick={()=>{history.push(`/Launches/${item.flight_number}`)}}>
               <td>{item.launch_year}</td>
               <td>{item.mission_name}</td>
               <td>{item.rocket_name}</td>
