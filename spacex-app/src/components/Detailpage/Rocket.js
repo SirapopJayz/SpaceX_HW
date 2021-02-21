@@ -1,12 +1,8 @@
 import React from "react";
 import { useQuery } from "react-query";
-<<<<<<< HEAD
 import "./Rocket.css";
 import Video2 from "../../components/videos/video-2.mp4"
-
-=======
 import {Button} from "react-bootstrap";
->>>>>>> adddetail_onpage
 const Rocket = (props) => {
   const { isLoading, error, data } = useQuery("spaceX", () =>
     fetch(
@@ -22,6 +18,7 @@ const Rocket = (props) => {
                 <source src={Video2} type="video/mp4" />
               </video>
       <div className="bg">
+        
         <div className="img-conainer">
           <img
             src={data.flickr_images[data.flickr_images.length - 1]}
@@ -40,7 +37,6 @@ const Rocket = (props) => {
               <li>Feet: {data.diameter.feet}</li>
               <li>meters: {data.diameter.meters}</li>
             </ul>
-<<<<<<< HEAD
             Mass:
             <ul>
               <li>Kg: {data.mass.kg}</li>
@@ -63,13 +59,8 @@ const Rocket = (props) => {
             })}
           </div>
         </div>
+        <Button href={'/Rocket'} variant="success">Go Back to Rocket Page</Button>
       </div>
-=======
-          );
-        })}
-      </ul>
-      <Button href={'/Rocket'} variant="success">Go Back to Rocket Page</Button>
->>>>>>> adddetail_onpage
     </div>
   );
 };
