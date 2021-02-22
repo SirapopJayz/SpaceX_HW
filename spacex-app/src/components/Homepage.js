@@ -35,8 +35,8 @@ const Homepage = () => {
               </div>
               <div className='subtitle-founder'>
                 {data.founder}<br></br><br></br>
-                <a href={data.links.elon_twitter}><i className="fab fa-twitter"></i></a>
-                <a href={data.links.website}><i className="fas fa-rocket"></i></a>
+                <a href={data?.links?.elon_twitter}><i className="fab fa-twitter"></i></a>
+                <a href={data?.links?.website}><i className="fas fa-rocket"></i></a>
               </div>
             </div>
           </div>

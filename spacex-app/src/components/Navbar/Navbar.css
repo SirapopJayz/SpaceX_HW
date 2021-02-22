@@ -57,7 +57,10 @@
 .menu-icon {
   display: none;
 }
-
+.isactive {
+  font-weight: bold;
+  color: yellow;
+}
 @media screen and (max-width: 960px) {
   .NavbarItems {
     position: relative;
