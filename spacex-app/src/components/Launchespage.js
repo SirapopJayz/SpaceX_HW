@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import Table from "react-bootstrap/Table";
 import Button from 'react-bootstrap/Button'
 import { useHistory } from "react-router-dom";
-const LaunchesPage = (props) => {
+const LaunchesPage = () => {
   const { isLoading, error, data } = useQuery("spaceX", () =>
     fetch("https://api.spacexdata.com/v3/launches").then((res) => res.json())
   );

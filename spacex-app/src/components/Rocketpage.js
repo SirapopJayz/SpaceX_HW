@@ -24,10 +24,9 @@ const RocketPage = () => {
   console.log(data);
   return (
     <div className="content">
-      <ul>
         {datalist.map((item, i) => {
           return (
-            <Card style={{ width: "18rem" }}>
+            <Card style={{ width: "18rem" }} key={i}>
               <Card.Img variant="top" src={item.images_url[0]} />
               <Card.Body>
                 <Card.Title>{item.rocket_name}</Card.Title>
@@ -47,7 +46,6 @@ const RocketPage = () => {
             </Card>
           );
         })}
-      </ul>
     </div>
   );
 };
