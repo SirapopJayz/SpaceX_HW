@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState, useEffect}from "react";
 import { useQuery } from "react-query";
 import Table from "react-bootstrap/Table";
 import {Button, Badge} from "react-bootstrap";
@@ -6,24 +6,120 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
+import axios from "axios"
 const LaunchesPage = () => {
-  const { isLoading, error, data } = useQuery("spaceX", () =>
-    fetch("https://api.spacexdata.com/v3/launches").then((res) => res.json())
-  );
-  const datalist = [];
-  if (isLoading) return "Loading...";
-  if (error) return "An error has occurred: " + error.message;
-  for (let i = 0; i < data.length; i++) {
-    datalist.push({
-      mission_name: data[i].mission_name,
-      launch_year: data[i].launch_year,
-      rocket_name: data[i]?.rocket?.rocket_name,
-      launch_success: data[i].launch_success,
-      flight_number: data[i].flight_number,
-      links_mission_patch_small: data[i]?.links?.mission_patch_small
-    });
-  }
-  console.log(data);
+  const [launchs, setLaunchs] = useState([]);
+  const [filterLaunchs, setFilterLaunchs] = useState([]);
+  const [filterBySuccess, setFilterBySuccess] = useState("all");
+  const [filterByName, setFilterByName] = useState("all");
+  const [filterByYear, setFilterByYear] = useState("all");
+  useEffect(async () => {
+    const launchs = await axios.get("https://api.spacexdata.com/v3/launches");
+    setLaunchs(launchs.data);
+    setFilterLaunchs(launchs.data);
+    console.log(launchs);
+  }, []);
+  const filterSuccess = (option) => {
+    if (option !== "all") {
+      if (filterByName !== "all" || filterByYear !== "all") {
+        const filter = launchs.filter(
+          (data) =>
+            String(data.launch_success) === option &&
+            (filterByName !== "all"
+              ? data.rocket.rocket_id === filterByName
+              : true) &&
+            (filterByYear !== "all" ? data.launch_year === filterByYear : true)
+        );
+        setFilterLaunchs(filter);
+      } else {
+        const filter = launchs.filter(
+          (data) => String(data.launch_success) === option
+        );
+        setFilterLaunchs(filter);
+      }
+    } else {
+      if (filterByName !== "all" || filterByYear !== "all") {
+        const filter = launchs.filter(
+          (data) =>
+            (filterByName !== "all"
+              ? data.rocket.rocket_id === filterByName
+              : true) &&
+            (filterByYear !== "all" ? data.launch_year === filterByYear : true)
+        );
+        setFilterLaunchs(filter);
+      } else {
+        setFilterLaunchs(launchs);
+      }
+    }
+  };
+  const filterName = (option) => {
+    if (option !== "all") {
+      if (filterBySuccess !== "all" || filterByYear !== "all") {
+        const filter = launchs.filter(
+          (data) =>
+            data.rocket.rocket_id === option &&
+            (filterBySuccess !== "all"
+              ? String(data.launch_success) === filterBySuccess
+              : true) &&
+            (filterByYear !== "all" ? data.launch_year === filterByYear : true)
+        );
+        setFilterLaunchs(filter);
+      } else {
+        const filter = launchs.filter(
+          (data) => data.rocket.rocket_id === option
+        );
+        setFilterLaunchs(filter);
+      }
+    } else {
+      if (filterBySuccess !== "all" || filterByYear !== "all") {
+        const filter = launchs.filter(
+          (data) =>
+            (filterBySuccess !== "all"
+              ? String(data.launch_success) === filterBySuccess
+              : true) &&
+            (filterByYear !== "all" ? data.launch_year === filterByYear : true)
+        );
+        setFilterLaunchs(filter);
+      } else {
+        setFilterLaunchs(launchs);
+      }
+    }
+  };
+  const filterYear = (option) => {
+    if (option !== "all") {
+      if (filterBySuccess !== "all" || filterByName !== "all") {
+        const filter = launchs.filter(
+          (data) =>
+            data.launch_year === option &&
+            (filterBySuccess !== "all"
+              ? String(data.launch_success) === filterBySuccess
+              : true) &&
+            (filterByName !== "all"
+              ? data.rocket.rocket_id === filterByName
+              : true)
+        );
+        setFilterLaunchs(filter);
+      } else {
+        const filter = launchs.filter((data) => data.launch_year === option);
+        setFilterLaunchs(filter);
+      }
+    } else {
+      if (filterBySuccess !== "all" || filterByName !== "all") {
+        const filter = launchs.filter(
+          (data) =>
+            (filterBySuccess !== "all"
+              ? String(data.launch_success) === filterBySuccess
+              : true) &&
+            (filterByName !== "all"
+              ? data.rocket.rocket_id === filterByName
+              : true)
+        );
+        setFilterLaunchs(filter);
+      } else {
+        setFilterLaunchs(launchs);
+      }
+    }
+  };
   return (
     <Container fluid>
       <Card className="p-3 rounded mt-5 mx-3" border="dark">
@@ -36,10 +132,10 @@ const LaunchesPage = () => {
               <Form.Control
                 as="select"
                 defaultValue="Choose..."
-                // onChange={(e) => {
-                //   setFilterByYear(e.target.value);
-                //   filterYear(e.target.value);
-                // }}
+                onChange={(e) => {
+                  setFilterByYear(e.target.value);
+                  filterYear(e.target.value);
+                }}
               >
                 <option value="all">Choose...</option>
                 <option value="2006">2006</option>
@@ -65,10 +161,10 @@ const LaunchesPage = () => {
               <Form.Control
                 as="select"
                 defaultValue="Choose..."
-                // onChange={(e) => {
-                //   setFilterByName(e.target.value);
-                //   filterName(e.target.value);
-                // }}
+                onChange={(e) => {
+                  setFilterByName(e.target.value);
+                  filterName(e.target.value);
+                }}
               >
                 <option value="all">Choose...</option>
                 <option value="falcon1">Falcon 1</option>
@@ -84,10 +180,10 @@ const LaunchesPage = () => {
               <Form.Control
                 as="select"
                 defaultValue={"all"}
-                // onChange={(e) => {
-                //   setFilterBySuccess(e.target.value);
-                //   filterSuccess(e.target.value);
-                // }}
+                onChange={(e) => {
+                  setFilterBySuccess(e.target.value);
+                  filterSuccess(e.target.value);
+                }}
               >
                 <option value="all">Choose...</option>
                 <option value={false}>False</option>
@@ -110,13 +206,13 @@ const LaunchesPage = () => {
           </tr>
         </thead>
         <tbody>
-          {datalist.map((item, i) => {
+          {filterLaunchs.map((item, i) => {
             return (
               <tr key={i}>
                 <td>{item.launch_year}</td>
-                <td><img src={item?.links_mission_patch_small} style={{width:'100%',height:'100%'}}></img></td>
+                <td><img src={item?.links.mission_patch_small} style={{width:'100%',height:'100%'}}></img></td>
                 <td>{item.mission_name}</td>
-                <td>{item.rocket_name}</td>
+                <td>{item.rocket.rocket_name}</td>
                 <td>
                   <Badge variant={item.launch_success ? "success" : "danger"} className="d-flex justify-content-center">
                     {item.launch_success ? "Success" : "Fail"}
