@@ -1,4 +1,5 @@
 {
+  "homepage": "http://sirapopjayz.github.io/SpaceX_HW/",
   "name": "spacex-app",
   "version": "0.1.0",
   "private": true,
@@ -18,6 +19,7 @@
     "react-query": "^3.9.8",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.3",
+    "script": "^0.1.4",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -46,5 +48,11 @@
       "last 1 safari version"
     ]
   },
+<<<<<<< HEAD
   "homepage": "https://SirapopJayz.github.io/SpaceX_HW/"
+=======
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
+  }
+>>>>>>> 8dfe62c1cd6b61e4a564376039119088b2c029ea
 }
