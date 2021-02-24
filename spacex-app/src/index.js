@@ -14,14 +14,14 @@ const queryClient = new QueryClient();
 ReactDOM.render(
   <QueryClientProvider client={queryClient}>
     <div className="body">
-      <BrowserRouter basename="/SpaceX_HW/">
+      <BrowserRouter basename="/SpaceX_HW/spacex_app">
         <Navbar />
-        <Route exact path="/SpaceX_HW/" component={Homepage} />
-        <Route exact path="/SpaceX_HW/Home" component={Homepage} />
-        <Route exact path="/SpaceX_HW/Launches" component={Launchespage}/>
-        <Route exact path="/SpaceX_HW/Rocket" component={Rocketpage} />
-        <Route path="/SpaceX_HW/Rocket/:rocket_id" component={Rocket} />
-        <Route path="/SpaceX_HW/Launches/:flight_number" component={Launches}/>
+        <Route exact path="/" component={Homepage} />
+        <Route exact path="/Home" component={Homepage} />
+        <Route exact path="/Launches" component={Launchespage}/>
+        <Route exact path="/Rocket" component={Rocketpage} />
+        <Route path="/Rocket/:rocket_id" component={Rocket} />
+        <Route path="/Launches/:flight_number" component={Launches}/>
       </BrowserRouter>
     </div>
   </QueryClientProvider>,
