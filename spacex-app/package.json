@@ -10,6 +10,7 @@
     "axios": "^0.21.1",
     "babel-eslint": "^10.1.0",
     "bootstrap": "^4.6.0",
+    "netlify-cli": "^3.8.6",
     "react": "^17.0.1",
     "react-api-cache": "^1.1.0",
     "react-bootstrap": "^1.5.0",
@@ -21,7 +22,6 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-
     "start": "react-scripts start",
     "build": "yarn build",
     "test": "react-scripts test",
