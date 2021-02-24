@@ -59,7 +59,7 @@ const Rocket = (props) => {
             })}
           </div>
         </div>
-        <Button href={'/Rocket'} variant="success">Go Back to Rocket Page</Button>
+        <Button href={'SpaceX_HW/Rocket'} variant="success">Go Back to Rocket Page</Button>
       </div>
     </div>
   );
