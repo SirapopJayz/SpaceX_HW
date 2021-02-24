@@ -1,6 +1,6 @@
 {
+  "homepage": "http://sirapopjayz.github.io/SpaceX_HW/",
   "name": "spacex-app",
-  "homepage": "http://sirapopjayz.github.io/SpaceX_HW",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
