@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import "./Rocketpage.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card} from 'react-bootstrap';
-// import Rocketitem from './Item/Rocketitem'
+// import Video2 from "../components/videos/video-2.mp4"
 const RocketPage = () => {
   const { isLoading, error, data } = useQuery("spaceX", () =>
     fetch("https://api.spacexdata.com/v3/rockets").then((res) => res.json())
@@ -26,6 +26,7 @@ const RocketPage = () => {
     <div className="content">
         {datalist.map((item, i) => {
           return (
+<<<<<<< HEAD
             <Card style={{ width: "18rem" }} key={i}>
               <Card.Img variant="top" src={item.images_url[0]} />
               <Card.Body>
@@ -46,6 +47,30 @@ const RocketPage = () => {
             </Card>
           );
         })}
+=======
+            <div className="container">
+              {/* <video loop autoPlay muted preload="auto" autobuffer="true" data-mobile-video>
+                <source src={Video2} type="video/mp4" />
+              </video> */}
+              <Card>
+                <Card.Img variant="top" src={item?.images_url?.[0]} />
+                <Card.Body>
+                  <Card.Title>{item.rocket_name}</Card.Title>
+                  <Card.Text>
+                    {item.description}
+                  </Card.Text>
+                </Card.Body>
+                <Card.Body>
+                  <Card.Link href={`/Rocket/${item.rocket_id}`}>Read more Detail</Card.Link>
+                  <Card.Link href={item.wikipedia}>Wiki Pedia</Card.Link>
+                </Card.Body>
+              </Card>
+            </div>
+            
+          );
+        })}
+      {/* </ul> */}
+>>>>>>> main
     </div>
   );
 };

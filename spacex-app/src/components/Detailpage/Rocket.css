@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    z-index: -1;
+}
+
+.bg {
+    background: black;
+}
+
+.img-conainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-block-end: 1.5em;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.context-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 768px;
+    padding-top: 0px;
+    padding-bottom: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.context {
+    font-size: 18px;
+    color: white;
+}
+
+li {
+    margin-left: 30px;
+}

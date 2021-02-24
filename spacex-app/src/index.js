@@ -16,11 +16,20 @@ ReactDOM.render(
     <div className="body">
       <BrowserRouter>
         <Navbar />
+<<<<<<< HEAD
           <Route path="/Home" component={Homepage}/>
           <Route exact path="/Launches" component={Launchespage}/>
           <Route exact path="/Rocket" component={Rocketpage}/>
           <Route path="/Rocket/:rocket_id" component={Rocket}/>
           <Route path="/Launches/:flight_number" component={Launches}/>
+=======
+        <Route exact path="/" component={Homepage} />
+        <Route exact path="/Home" component={Homepage} />
+        <Route exact path="/Launches" component={Launchespage}/>
+        <Route exact path="/Rocket" component={Rocketpage} />
+        <Route path="/Rocket/:rocket_id" component={Rocket} />
+        <Route path="/Launches/:flight_number" component={Launches}/>
+>>>>>>> main
       </BrowserRouter>
     </div>
   </QueryClientProvider>,

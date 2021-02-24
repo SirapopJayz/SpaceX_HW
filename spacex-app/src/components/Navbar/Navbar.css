@@ -9,6 +9,7 @@
   top: 0;
   z-index: 999;
 }
+
 .navbar-logo {
   color: white;
   justify-self: start;
@@ -56,7 +57,10 @@
 .menu-icon {
   display: none;
 }
-
+.isactive {
+  font-weight: bold;
+  color: yellow;
+}
 @media screen and (max-width: 960px) {
   .NavbarItems {
     position: relative;
