@@ -26,28 +26,6 @@ const RocketPage = () => {
     <div className="content">
         {datalist.map((item, i) => {
           return (
-<<<<<<< HEAD
-            <Card style={{ width: "18rem" }} key={i}>
-              <Card.Img variant="top" src={item.images_url[0]} />
-              <Card.Body>
-                <Card.Title>{item.rocket_name}</Card.Title>
-                <Card.Text>
-                  {item.description}
-                </Card.Text>
-              </Card.Body>
-              {/* <ListGroup className="list-group-flush">
-                <ListGroupItem>Cras justo odio</ListGroupItem>
-                <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-                <ListGroupItem>Vestibulum at eros</ListGroupItem>
-              </ListGroup> */}
-              <Card.Body>
-                <Card.Link href={`/Rocket/${item.rocket_id}`}>Read more Detail</Card.Link>
-                <Card.Link href={item.wikipedia}>Wiki Pedia</Card.Link>
-              </Card.Body>
-            </Card>
-          );
-        })}
-=======
             <div className="container">
               {/* <video loop autoPlay muted preload="auto" autobuffer="true" data-mobile-video>
                 <source src={Video2} type="video/mp4" />
@@ -70,7 +48,6 @@ const RocketPage = () => {
           );
         })}
       {/* </ul> */}
->>>>>>> main
     </div>
   );
 };
