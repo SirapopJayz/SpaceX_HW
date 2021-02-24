@@ -14,7 +14,7 @@ const queryClient = new QueryClient();
 ReactDOM.render(
   <QueryClientProvider client={queryClient}>
     <div className="body">
-      <BrowserRouter basename="/SpaceX_HW">
+      <BrowserRouter basename="/SpaceX_HW/">
         <Navbar />
         <Route exact path="/SpaceX_HW/" component={Homepage} />
         <Route exact path="/SpaceX_HW/Home" component={Homepage} />
