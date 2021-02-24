@@ -1,17 +1,17 @@
 const Menuitems = [
     {
         title: "Home",
-        path: "/SpaceX_HW/Home",
+        path: "/Home",
         cName: "nav-links"
     },
     {
         title: "Rocket",
-        path: "/SpaceX_HW/Rocket",
+        path: "/Rocket",
         cName: "nav-links"
     },
     {
         title: "Launches",
-        path: "/SpaceX_HW/Launches",
+        path: "/Launches",
         cName: "nav-links"
     },
 ]
