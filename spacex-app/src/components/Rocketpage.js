@@ -39,7 +39,7 @@ const RocketPage = () => {
                   </Card.Text>
                 </Card.Body>
                 <Card.Body>
-                  <Card.Link href={`/Rocket/${item.rocket_id}`}>Read more Detail</Card.Link>
+                  <Card.Link href={`/SpaceX_HW/Rocket/${item.rocket_id}`}>Read more Detail</Card.Link>
                   <Card.Link href={item.wikipedia}>Wiki Pedia</Card.Link>
                 </Card.Body>
               </Card>
