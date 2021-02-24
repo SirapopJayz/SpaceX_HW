@@ -13,6 +13,41 @@ const Rocket = (props) => {
   if (error) return "An error has occurred: " + error.message;
   console.log(data);
   return (
+<<<<<<< HEAD
+    <div className="content">
+      <img
+        src={data.flickr_images[data.flickr_images.length - 1]}
+        alt="Rocket"
+      />
+      <p>RocketName : {data.rocket_name}</p>
+      <p>Country : {data.country}</p>
+      <p>Description :{data.description}</p>
+      <p>Booster: {data.boosters}</p>
+      <p>Cost: {data.cost_per_launch}</p>
+      Diameter:
+      <ul key="Diameter">
+        <li>Feet: {data.diameter.feet}</li>
+        <li>meters: {data.diameter.meters}</li>
+      </ul>
+      Mass:
+      <ul key="Mass">
+        <li>Kg: {data.mass.kg}</li>
+        <li>Lb: {data.mass.lb}</li>
+      </ul>
+      Height:
+      <ul key="Height">
+        <li>Meters: {data.height.meters}</li>
+        <li>Feet: {data.height.feet}</li>
+      </ul>
+      <ul key="Payload weights">
+        Payload weights:
+        {data.payload_weights.map((item) => {
+          return (
+            <ul key="unit Payload weights">
+              <li>Name: {item.name}</li>
+              <li>Kg: {item.kg}</li>
+              <li>Lb: {item.lb}</li>
+=======
     <div className="container">
       <video loop autoPlay muted preload="auto" autobuffer="true" data-mobile-video>
                 <source src={Video2} type="video/mp4" />
@@ -36,6 +71,7 @@ const Rocket = (props) => {
             <ul>
               <li>Feet: {data.diameter.feet}</li>
               <li>meters: {data.diameter.meters}</li>
+>>>>>>> main
             </ul>
             Mass:
             <ul>

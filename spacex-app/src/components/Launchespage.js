@@ -1,6 +1,28 @@
 import React ,{useState, useEffect}from "react";
 import { useQuery } from "react-query";
 import Table from "react-bootstrap/Table";
+<<<<<<< HEAD
+import Button from 'react-bootstrap/Button'
+import { useHistory } from "react-router-dom";
+const LaunchesPage = () => {
+  const { isLoading, error, data } = useQuery("spaceX", () =>
+    fetch("https://api.spacexdata.com/v3/launches").then((res) => res.json())
+  );
+  const datalist = [];
+  if (isLoading) return "Loading...";
+  if (error) return "An error has occurred: " + error.message;
+  for (let i = 0; i < data.length; i++) {
+    datalist.push({
+      mission_name: data[i].mission_name,
+      launch_year: data[i].launch_year,
+      rocket_name: data[i].rocket.rocket_name,
+      launch_success: data[i].launch_success,
+      flight_number: data[i].flight_number,
+    });
+  }
+  console.log(data);
+  const history = useHistory();
+=======
 import {Button, Badge} from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -120,6 +142,7 @@ const LaunchesPage = () => {
       }
     }
   };
+>>>>>>> main
   return (
     <Container fluid>
       <Card className="p-3 rounded mt-5 mx-3" border="dark">
