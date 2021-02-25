@@ -23,7 +23,7 @@ class Navbar extends Component {
           {Menuitems.map((item, index) => {
             return (
               <li key={index}>
-                <NavLink to={item.path} className={item.cName} onClick={this.handleClick} activeClassName="isactive">{item.title}</NavLink>
+                <NavLink to={item.path} className={item.cName} onClick={this.handleClick} activeClassName="isactive" activeStyle={{ textDecoration: 'underline' }} exact> {item.title}</NavLink>
               </li>
             );
           })}

@@ -31,7 +31,7 @@ const Homepage = () => {
             </div>
             <div className='founder-info'>
               <div className='topic-founder'>
-                Founder
+                Founder.
               </div>
               <div className='subtitle-founder'>
                 {data.founder}<br></br><br></br>
