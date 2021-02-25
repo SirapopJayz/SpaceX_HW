@@ -1,7 +1,7 @@
 const Menuitems = [
     {
         title: "Home",
-        path: "/",
+        path: "/SpaceX_HW",
         cName: "nav-links"
     },
     {
