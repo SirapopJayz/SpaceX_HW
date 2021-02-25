@@ -24,7 +24,7 @@ const Launches = (props) => {
       <p>Rocket Type : {data?.rocket?.rocket_type}</p>
       <p>Launch Year : {data.launch_year}</p>
       <p>Launch Site Name : {data?.launch_site?.site_name}</p>
-      <Button href={`/Rocket/${data?.rocket?.rocket_id}`} variant="warning">Read More About Rocket Detail</Button>
+      <Button href={`SpaceX_HW/Rocket/${data?.rocket?.rocket_id}`} variant="warning">Read More About Rocket Detail</Button>
       <Button href={'/Launches'} variant="success">Go Back to Launches Page</Button>
     </div>
   );

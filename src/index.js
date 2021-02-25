@@ -19,8 +19,8 @@ ReactDOM.render(
         <Route exact path="/" component={Homepage} />
         <Route exact path="/Launches" component={Launchespage}/>
         <Route exact path="/Rocket" component={Rocketpage} />
-        <Route path="/Rocket/:rocket_id" component={Rocket} />
-        <Route path="/Launches/:flight_number" component={Launches}/>
+        <Route path="SpaceX_HW/Rocket/:rocket_id" component={Rocket} />
+        <Route path="SpaceX_HW/Launches/:flight_number" component={Launches}/>
       </BrowserRouter>
     </div>
   </QueryClientProvider>,
