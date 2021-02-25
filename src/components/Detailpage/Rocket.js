@@ -16,13 +16,13 @@ const Rocket = (props) => {
     <div className="container">
       <video loop autoPlay muted preload="auto" autobuffer="true" data-mobile-video>
                 <source src={Video2} type="video/mp4" />
-              </video>
+        </video>
       <div className="bg">
         
         <div className="img-conainer">
           <img
-            src={data.flickr_images[data.flickr_images.length - 1]}
-            alt="Rocket"
+            src={data?.flickr_images?.[0]}
+            alt={data.rocket_name}
           />
         </div>
         <div className="context-container">
@@ -34,21 +34,21 @@ const Rocket = (props) => {
             <h5><strong>Cost :</strong> {data.cost_per_launch}</h5>
             Diameter:
             <ul>
-              <li>Feet: {data.diameter.feet}</li>
-              <li>meters: {data.diameter.meters}</li>
+              <li>Feet: {data?.diameter?.feet}</li>
+              <li>meters: {data?.diameter?.meters}</li>
             </ul>
             Mass:
             <ul>
-              <li>Kg: {data.mass.kg}</li>
-              <li>Lb: {data.mass.lb}</li>
+              <li>Kg: {data?.mass?.kg}</li>
+              <li>Lb: {data?.mass?.lb}</li>
             </ul>
             Height:
             <ul>
-              <li>Meters: {data.height.meters}</li>
-              <li>Feet: {data.height.feet}</li>
+              <li>Meters: {data?.height?.meters}</li>
+              <li>Feet: {data?.height?.feet}</li>
             </ul>
             Payload weights:
-            {data.payload_weights.map((item) => {
+            {data?.payload_weights?.map((item) => {
               return (
                 <ul>
                   <li>Name: {item.name}</li>
