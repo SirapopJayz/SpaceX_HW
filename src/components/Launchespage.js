@@ -219,7 +219,7 @@ const LaunchesPage = () => {
                   </Badge>
                 </td>
                 <td>
-                  <Button variant="info" href={`SpaceX_HW/Launches/${item.flight_number}`} style={{textAlign: "center", alignItems: "center"}} size="md">
+                  <Button variant="info" href={`/Launches/${item.flight_number}`} style={{textAlign: "center", alignItems: "center"}} size="md">
                     Click
                   </Button>
                 </td>
