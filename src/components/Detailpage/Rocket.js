@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "react-query";
 import "./Rocket.css";
 import Video2 from "../../components/videos/video-2.mp4"
-import {Button} from "react-bootstrap";
+import {Link} from "react-router-dom";
 const Rocket = (props) => {
   const { isLoading, error, data } = useQuery("spaceX", () =>
     fetch(
@@ -59,7 +59,7 @@ const Rocket = (props) => {
             })}
           </div>
         </div>
-        <Button href={'/Rocket'} variant="success">Go Back to Rocket Page</Button>
+        <Link to={'/Rocket'}>Go Back to Rocket Page</Link>
       </div>
     </div>
   );

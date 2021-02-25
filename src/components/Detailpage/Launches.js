@@ -1,6 +1,7 @@
 import React from "react";
 import { useQuery } from "react-query";
 import {Button} from "react-bootstrap";
+import {Link} from "react-router-dom";
 const Launches = (props) => {
   const { isLoading, error, data } = useQuery("spaceX", () =>
     fetch(
@@ -24,8 +25,8 @@ const Launches = (props) => {
       <p>Rocket Type : {data?.rocket?.rocket_type}</p>
       <p>Launch Year : {data.launch_year}</p>
       <p>Launch Site Name : {data?.launch_site?.site_name}</p>
-      <Button href={`SpaceX_HW/Rocket/${data?.rocket?.rocket_id}`} variant="warning">Read More About Rocket Detail</Button>
-      <Button href={'/Launches'} variant="success">Go Back to Launches Page</Button>
+      <Link to={`/Rocket/${data?.rocket?.rocket_id}`}>Read More About Rocket Detail</Link>
+      <Link to={'/Launches'} >Go Back to Launches Page</Link>
     </div>
   );
 };

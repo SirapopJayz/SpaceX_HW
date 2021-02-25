@@ -7,6 +7,7 @@ import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import axios from "axios"
+import {Link} from "react-router-dom";
 const LaunchesPage = () => {
   const [launchs, setLaunchs] = useState([]);
   const [filterLaunchs, setFilterLaunchs] = useState([]);
@@ -219,9 +220,9 @@ const LaunchesPage = () => {
                   </Badge>
                 </td>
                 <td>
-                  <Button variant="info" href={`SpaceX_HW/Launches/${item.flight_number}`} style={{textAlign: "center", alignItems: "center"}} size="md">
+                  <Link to={`/Launches/${item.flight_number}`} style={{textAlign: "center", alignItems: "center"}}>
                     Click
-                  </Button>
+                  </Link>
                 </td>
               </tr>
             );

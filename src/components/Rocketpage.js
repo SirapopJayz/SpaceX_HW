@@ -3,6 +3,7 @@ import { useQuery } from "react-query";
 import "./Rocketpage.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card} from 'react-bootstrap';
+import {Link} from "react-router-dom";
 // import Video2 from "../components/videos/video-2.mp4"
 const RocketPage = () => {
   const { isLoading, error, data } = useQuery("spaceX", () =>
@@ -39,7 +40,7 @@ const RocketPage = () => {
                   </Card.Text>
                 </Card.Body>
                 <Card.Body>
-                  <Card.Link href={`SpaceX_HW/Rocket/${item.rocket_id}`}>Read more Detail</Card.Link>
+                  <Link to={`/Rocket/${item.rocket_id}`}>Read more Detail</Link>
                   <Card.Link href={item.wikipedia}>Wiki Pedia</Card.Link>
                 </Card.Body>
               </Card>
