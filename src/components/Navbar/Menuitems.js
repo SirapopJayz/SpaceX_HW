@@ -1,7 +1,7 @@
 const Menuitems = [
     {
         title: "Home",
-        path: "/Home",
+        path: "/",
         cName: "nav-links"
     },
     {
